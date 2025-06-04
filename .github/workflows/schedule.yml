@@ -1,6 +1,7 @@
 name: Scheduled Playwright Tests
 
 on:
+  workflow_dispatch:  
   schedule:
     - cron: '0 6 * * 1-5'  # 8 AM GMT+2 Mon-Fri (6 AM UTC)
 
