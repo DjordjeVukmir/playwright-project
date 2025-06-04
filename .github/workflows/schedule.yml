@@ -6,7 +6,7 @@ on:
       - main
       - feature/ci-workflows
   schedule:
-    - cron: '0 6 * * 1-5'  # Note quotes here
+    - cron: '0 6 * * 1-5'  
 
 jobs:
   test:
