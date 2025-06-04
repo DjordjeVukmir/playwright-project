@@ -1,0 +1,12 @@
+name: Test Workflow
+
+on:
+  push:
+    branches:
+      - feature/ci-workflows
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello from feature/ci-workflows"
