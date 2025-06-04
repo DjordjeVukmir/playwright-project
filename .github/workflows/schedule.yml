@@ -1,12 +1,13 @@
----
 name: Scheduled Playwright Tests
+
 on:
-  workflow_dispatch: 
-  schedule:
-    - cron: 0 6 * * 1-5
+  workflow_dispatch:
     branches:
-        - main
-        - feature/ci-workflows
+      - main
+      - feature/ci-workflows
+  schedule:
+    - cron: '0 6 * * 1-5'  # Note quotes here
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -33,9 +34,6 @@ jobs:
           GCHAT_WEBHOOK_URL: ${{ secrets.GCHAT_WEBHOOK_URL }}
           RUN_ID: ${{ github.run_id }}
           REPO: ${{ github.repository }}
-        run: >
-          MSG="Playwright Scheduled Tests finished. View report and download artifact
-          here: https://github.com/$REPO/actions/runs/$RUN_ID"
-
-          curl -X POST -H 'Content-Type: application/json' \
-            -d "{\"text\": \"$MSG\"}" $GCHAT_WEBHOOK_URL
+        run: |
+          MSG="Playwright Scheduled Tests finished. View report and download artifact here: https://github.com/$REPO/actions/runs/$RUN_ID"
+          curl -X POST -H 'Content-Type: application/json' -d "{\"text\": \"$MSG\"}" $GCHAT_WEBHOOK_URL
