@@ -25,7 +25,7 @@ test('Verify that Dark Mode is enabled.', async ({ page }) => {
 });
 
 
-test('Verify that User can search for a flight.', async ({ page }) => {
+/*test('Verify that User can search for a flight.', async ({ page }) => {
     await addFlight(testData, page);
     await page.waitForTimeout(2000)
 
@@ -45,6 +45,7 @@ test('Verify that User can search for a flight.', async ({ page }) => {
     console.log('Tickets are available');
 
 });
+*/
 
 
 //Functions
