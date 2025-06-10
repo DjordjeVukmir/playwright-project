@@ -44,7 +44,7 @@ jobs:
           name: allure-report
           path: allure-report/
 
-       - name: Send notification to Google Chat
+      - name: Send notification to Google Chat
         env:
           GCHAT_WEBHOOK_URL: ${{ secrets.GCHAT_WEBHOOK_URL }}
           RUN_ID: ${{ github.run_id }}
