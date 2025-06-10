@@ -36,7 +36,6 @@ jobs:
           publish_dir: ./allure-report
           publish_branch: gh-pages
           force_orphan: true
-          force: true
 
       - name: Upload Allure report artifact
         uses: actions/upload-artifact@v4
@@ -53,6 +52,6 @@ jobs:
           REPO_NAME: ${{ github.event.repository.name }}
         run: |
           REPORT_URL="https://${OWNER}.github.io/${REPO_NAME}/"
-          ARTIFACT_URL="https://github.com/${REPO}/actions/runs/${RUN_ID}/artifacts"
-          MSG="✅ Playwright Scheduled Tests finished. View report here: ${REPORT_URL}\nDownload zipped report here: ${ARTIFACT_URL}"
+          ARTIFACT_URL="https://github.com/${REPO}/actions/runs/${RUN_ID}"
+          MSG="✅ Playwright Scheduled Tests finished. View report here: ${REPORT_URL}\nDownload zipped report here: ${ARTIFACT_URL} — click the download icon (bottom right) next to the artifact to save the report."
           curl -X POST -H 'Content-Type: application/json' -d "{\"text\": \"$MSG\"}" $GCHAT_WEBHOOK_URL
