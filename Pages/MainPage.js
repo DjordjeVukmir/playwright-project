@@ -20,7 +20,7 @@ export class MainPage {
     this.adultsCount = page.locator('[data-test-id="number-of-adults"] [data-test-id="passenger-number"]');
     this.increaseBtnAdults = page.locator('[data-test-id="number-of-adults"] [data-test-id="increase-button"]');
     this.decreaseBtnAdults = page.locator('[data-test-id="number-of-adults"] [data-test-id="decrease-button"]');
-    this.errorText = page.getByText('Failed to load tickets');
+
   }
 
   async goto() {
