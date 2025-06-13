@@ -1,0 +1,6 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","8281","Verify that User can search for a flight.","chromium","Wed May 28 18:26:02 UTC 2025","passed","Wed May 28 18:26:10 UTC 2025","","avia-sales.spec.js","",""
+"","3196","Verify that Dark Mode is enabled.","chromium","Fri Jun 13 06:13:17 UTC 2025","passed","Fri Jun 13 06:13:21 UTC 2025","","avia-sales.spec.js","",""
+"","3022","Verify that User is on the correct page.","chromium","Fri Jun 13 06:13:14 UTC 2025","passed","Fri Jun 13 06:13:17 UTC 2025","","avia-sales.spec.js","",""
+"","347","has title","chromium","Fri Jun 13 06:13:21 UTC 2025","passed","Fri Jun 13 06:13:21 UTC 2025","","example.spec.js","",""
+"","377","get started link","chromium","Fri Jun 13 06:13:21 UTC 2025","passed","Fri Jun 13 06:13:21 UTC 2025","","example.spec.js","",""
