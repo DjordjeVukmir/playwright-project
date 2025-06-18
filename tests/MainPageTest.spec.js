@@ -1,6 +1,8 @@
 const { test } = require('./pageFixtures');
 const testData = require('../fixtures/testData.json');
 const { allure } = require('allure-playwright');
+const { wrapWithStepScreenshots } = require('./screenshotHelper');
+
 
 test.afterEach(async ({ page }, testInfo) => {
     const screenshot = await page.screenshot({ path: `./allure-results/${testInfo.title}.png`, type: 'png' });
@@ -10,24 +12,29 @@ test.afterEach(async ({ page }, testInfo) => {
     });
 });
 
-test('Verify that User is on the correct page.', async ({ mainPage }) => {
-    await mainPage.verifyCorrectPage();
 
+test('Verify that User is on the correct page.', async ({ mainPage, page }) => {
+    const wrappedMainPage = wrapWithStepScreenshots(page, mainPage);
+    await wrappedMainPage.verifyCorrectPage();
 });
 
-test('Verify that Dark Mode is enabled.', async ({ mainPage, page }, testInfo) => {
-    await mainPage.verifyDarkMode();
 
-
+test('Verify that Dark Mode is enabled.', async ({ mainPage, page }) => {
+    const wrappedMainPage = wrapWithStepScreenshots(page, mainPage);
+    await wrappedMainPage.verifyDarkMode();
 });
-test('Verify that User can search for a flight.', async ({ mainPage }) => {
-    await mainPage.addFlight(testData);
-    await mainPage.areLocationsDisplayedOnTheIntermediatePage(testData);
-    await mainPage.areIntermediatePageFieldsPresent();
-    await mainPage.selectDate(testData);
-    await mainPage.setPassengerNumber();
-    await mainPage.closePassengerMenu();
-    await mainPage.areTicketPageFieldsPresent();
+
+
+test('Verify that User can search for a flight.', async ({ mainPage, page }) => {
+    const wrappedMainPage = wrapWithStepScreenshots(page, mainPage);
+
+    await wrappedMainPage.addFlight(testData);
+    await wrappedMainPage.areLocationsDisplayedOnTheIntermediatePage(testData);
+    await wrappedMainPage.areIntermediatePageFieldsPresent();
+    await wrappedMainPage.selectDate(testData);
+    await wrappedMainPage.setPassengerNumber();
+    await wrappedMainPage.closePassengerMenu();
+    await wrappedMainPage.areTicketPageFieldsPresent();
 
     console.log('Tickets are available');
 });
