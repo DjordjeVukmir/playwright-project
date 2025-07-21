@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","6948","Verify that User is on the correct page.","chromium","Mon Jul 21 06:15:20 UTC 2025","passed","Mon Jul 21 06:15:27 UTC 2025","","MainPageTest.spec.js","",""
+"","5580","Verify that Dark Mode is enabled.","chromium","Mon Jul 21 06:15:27 UTC 2025","passed","Mon Jul 21 06:15:33 UTC 2025","","MainPageTest.spec.js","",""
+"","7788","Verify that User can search for a flight.","chromium","Mon Jul 21 06:15:33 UTC 2025","passed","Mon Jul 21 06:15:41 UTC 2025","","MainPageTest.spec.js","",""
