@@ -24,15 +24,18 @@ jobs:
         run: docker run --rm playwright-tests
 
       - name: Generate Allure HTML Report
+        if: always()
         run: npm run allure-generate
 
       - name: Upload Allure HTML Report
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: allure-report
           path: allure-report
 
       - name: Upload Allure Raw Results
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: allure-results
