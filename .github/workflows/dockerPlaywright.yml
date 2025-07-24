@@ -21,9 +21,7 @@ jobs:
         run: docker build -t playwright-tests .
 
       - name: Run tests in container
-        run: |
-          docker run --rm -v ${{ github.workspace }}:/app \
-            playwright-tests npx playwright test
+        run: docker run --rm playwright-tests
 
       - name: Generate Allure HTML Report
         run: npm run allure-generate
