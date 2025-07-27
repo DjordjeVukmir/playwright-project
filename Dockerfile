@@ -27,5 +27,5 @@ RUN curl -o allure.zip -L https://github.com/allure-framework/allure2/releases/d
     && rm allure.zip
 
 # Default command
-CMD ["npx", "playwright", "test", "--project=chromium", "--reporter=line,html,allure-playwright"]
+CMD ["sh", "-c", "npx playwright test --project=chromium --reporter=line,allure-playwright && allure generate allure-results --clean -o allure-report"]
 
