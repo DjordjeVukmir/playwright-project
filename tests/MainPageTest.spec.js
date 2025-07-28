@@ -6,6 +6,13 @@ const { allure } = require('allure-playwright');
 const { wrapWithStepScreenshots } = require('./screenshotHelper');
 
 
+//Create a folder pre-run (this is for the docker image)
+const allureResultsDir = path.join(process.cwd(), 'allure-results');
+if (!fs.existsSync(allureResultsDir)) {
+    fs.mkdirSync(allureResultsDir, { recursive: true });
+}
+
+
 test.afterEach(async ({ page }, testInfo) => {
     // Screenshot
     const screenshot = await page.screenshot({ path: `./allure-results/${testInfo.title}.png`, type: 'png' });
