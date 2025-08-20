@@ -1,4 +1,4 @@
-"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","30321","Verify that User can search for a flight.","chromium","Thu Jun 12 02:19:40 CEST 2025","broken","Thu Jun 12 02:20:10 CEST 2025","","MainPageTest.spec.js","",""
-"","3542","Verify that User is on the correct page.","chromium","Thu Jun 12 02:19:40 CEST 2025","passed","Thu Jun 12 02:19:43 CEST 2025","","MainPageTest.spec.js","",""
-"","3224","Verify that Dark Mode is enabled.","chromium","Thu Jun 12 02:19:40 CEST 2025","passed","Thu Jun 12 02:19:43 CEST 2025","","MainPageTest.spec.js","",""
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"failed","Wed Aug 20 23:08:35 UTC 2025","Wed Aug 20 23:08:47 UTC 2025","11755","chromium","MainPageTest.spec.js","","","","Verify that User can search for a flight.",""
+"passed","Wed Aug 20 23:08:32 UTC 2025","Wed Aug 20 23:08:38 UTC 2025","5178","chromium","MainPageTest.spec.js","","","","Verify that User is on the correct page.",""
+"passed","Wed Aug 20 23:08:32 UTC 2025","Wed Aug 20 23:08:38 UTC 2025","5436","chromium","MainPageTest.spec.js","","","","Verify that Dark Mode is enabled.",""

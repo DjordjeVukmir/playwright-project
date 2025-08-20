@@ -37,8 +37,8 @@ ENV PORT=8080
 # Expose port for report server
 EXPOSE 8080
 
-# Default command: run tests, generate report, then serve it on port 8080
-CMD sh -c "\
-    npx playwright test --project=chromium --reporter=line,allure-playwright --output=$ALLURE_RESULTS_DIR && \
-    allure generate $ALLURE_RESULTS_DIR --clean -o $ALLURE_REPORT_DIR && \
-    http-server $ALLURE_REPORT_DIR -p $PORT -c-1"
+# Copy entrypoint script
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
+ENTRYPOINT ["entrypoint.sh"]
